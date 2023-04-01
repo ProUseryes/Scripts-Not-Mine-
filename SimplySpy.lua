@@ -1689,9 +1689,9 @@ local newnamecall = newcclosure(function(...)
     end
 end)
 
-local newFireServer = newcclosure(function(...) return hookRemote("RemoteEvent", ...) end)
+local newFireServer = newcclosure(function(...) task.wait() return hookRemote("RemoteEvent", ...) end)
 
-local newInvokeServer = newcclosure(function(...) return hookRemote("RemoteFunction", ...) end)
+local newInvokeServer = newcclosure(function(...) task.wait() return hookRemote("RemoteFunction", ...) end)
 
 --- Toggles on and off the remote spy
 function toggleSpy()
