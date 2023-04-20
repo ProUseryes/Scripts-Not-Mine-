@@ -1015,6 +1015,7 @@ function newRemote(type, name, gen_script, remote, function_info, blocked, src)
     id.Name = "ID"
     id.Value = #logs + 1
     id.Parent = remoteFrame
+    if src == "" and game.PlaceId == 6284583030 then return end
     logs[#logs + 1] = {
         Name = name,
         GenScript = gen_script,
