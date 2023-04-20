@@ -1008,6 +1008,7 @@ end
 --- @param function_info string
 --- @param blocked any
 function newRemote(type, name, gen_script, remote, function_info, blocked, src)
+    if string.find(src,"()") and game.PlaceId == 6284583030 then return end
     local remoteFrame = RemoteTemplate:Clone()
     remoteFrame.Text.Text = name
     remoteFrame.ColorBar.BackgroundColor3 = type == "event" and Color3.new(255, 242, 0) or Color3.fromRGB(99, 86, 245)
@@ -1015,7 +1016,6 @@ function newRemote(type, name, gen_script, remote, function_info, blocked, src)
     id.Name = "ID"
     id.Value = #logs + 1
     id.Parent = remoteFrame
-    if src == "" and game.PlaceId == 6284583030 then return end
     logs[#logs + 1] = {
         Name = name,
         GenScript = gen_script,
