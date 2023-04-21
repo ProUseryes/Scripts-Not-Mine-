@@ -1008,7 +1008,8 @@ end
 --- @param function_info string
 --- @param blocked any
 function newRemote(type, name, gen_script, remote, function_info, blocked, src)
-    if string.sub(src,#src - 2) == "()" and game.PlaceId == 6284583030 then return print(string.sub(src,#src - 2)) end
+    if string.sub(src,#src - 2) == "()" and game.PlaceId == 6284583030 then print(string.sub(src,#src - 2))
+    else
     local remoteFrame = RemoteTemplate:Clone()
     remoteFrame.Text.Text = name
     remoteFrame.ColorBar.BackgroundColor3 = type == "event" and Color3.new(255, 242, 0) or Color3.fromRGB(99, 86, 245)
@@ -1040,6 +1041,7 @@ function newRemote(type, name, gen_script, remote, function_info, blocked, src)
     table.insert(remoteLogs, 1, {connect, remoteFrame})
     clean()
     updateRemoteCanvas()
+    end
 end
 
 --- Generates a script from the provided arguments (first has to be remote path)
